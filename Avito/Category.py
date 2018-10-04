@@ -20,11 +20,14 @@ def getDictCategories(ip_list):
     dict_categories = {}
 
     links = getListCategories(Request('https://www.avito.ru/', ip_list).getHtml())
-    # Получаем список категорий
+    '''Получаем список категорий'''
 
     for category in categories:
         dict_categories[category] = links[categories.index(category)]
-        # Добавляем в словарь категории. Ключём является название категории на русском, значение является название категории на английском
+        '''
+        Добавляем в словарь категории. Ключём является название категории на русском,
+        значение является название категории на английском
+        '''
 
     print(dict_categories)
     return dict_categories

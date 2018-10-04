@@ -12,7 +12,6 @@ def getData(html):
     return links
 
 
-
 def getSubcategories(category, ip):
     url = "https://avito.ru/rossiya/{}".format(category)
     while True:

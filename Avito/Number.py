@@ -43,11 +43,9 @@ class NumberTelephone:
         print(data)
         all_number.append(data)
 
-
     def getName(self):
         name = self.driver.find_element_by_xpath('//span[@class="title-info-title-text"]').text
         return name
-
 
     def buttonClick(self):
         while True:
@@ -59,11 +57,9 @@ class NumberTelephone:
             except:
                 continue
 
-
     def getImage(self):
         image = self.driver.find_element_by_xpath('//div[@class="item-phone-big-number js-item-phone-big-number"]/img').get_attribute('src').split(',')[1]
         return image
-
 
     def getNumber(self):
         number = None

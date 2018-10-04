@@ -22,3 +22,5 @@ def Threading(urls):
     for url in urls:
         NumberTelephone(url)
         print(len(all_number))
+    print(all_number)
+    return all_number
