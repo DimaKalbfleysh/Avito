@@ -43,7 +43,7 @@ def main():
     n = 5
     '''n = колличество потоков'''
 
-    number = getNumberTelephone(goods, n)
+    numbers = getNumberTelephone(goods, n)
     '''Получаем список номеров телефона продовцов'''
 
 
