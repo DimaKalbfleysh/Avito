@@ -18,8 +18,7 @@ def main():
 
     city = cities["Ижевск"]
     '''
-     Получаем нужный город.'''
-
+     Получаем нужный город.1'''
     district = getDistrict(city, proxy_list)
     '''Получаем словарь с районами city.'''
 
