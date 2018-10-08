@@ -1,5 +1,5 @@
+# coding=utf-8
 from base64 import decodebytes
-from os import remove
 from PIL import Image
 from pytesseract import *
 from selenium import webdriver
@@ -8,46 +8,35 @@ from selenium.common.exceptions import NoSuchElementException
 all_number = []
 
 
-def Namber(name):
-    tessdata_dir_config = '--tessdata-dir "C:\Tesseract-OCR"'
-    image = Image.open(name)
-    number = image_to_string(image, config=tessdata_dir_config, lang='eng')
-    return number
-
-
-def write(img, name):
-    while True:
-        try:
-            with open(name, "wb") as f:
-                f.write(img)
-            namber = Namber(name)
-            remove("Avito.png")
-            return namber
-        except:
-            continue
-
-
 class NumberTelephone:
-    def __init__(self, url):
+    def __init__(self, url, index):
         self.driver = webdriver.PhantomJS(executable_path=r'C:\Users\Dima\Downloads\phantomjs-2.1.1-windows\phantomjs-2.1.1-windows\bin\phantomjs')
+        self.url = url
+        self.name = "AvitoIMG/Avito{}.png".format(index)
+
+    def main(self):
         while True:
             try:
-                self.driver.get(url)
+                self.driver.get(self.url)
                 break
             except:
                 continue
         name = self.getName()
         self.buttonClick()
-        number = self.getNumber()
+        image = self.getImage()
+        self.write(image)
+        number = self.getNamber()
         data = "{} - {}".format(name, str(number))
         print(data)
         all_number.append(data)
 
     def getName(self):
+        """ Метод возвращает название товара. """
         name = self.driver.find_element_by_xpath('//span[@class="title-info-title-text"]').text
         return name
 
     def buttonClick(self):
+        """ Метод кликает на кнопку для получения номера телефона. """
         while True:
             try:
                 button = self.driver.find_element_by_xpath(
@@ -58,17 +47,25 @@ class NumberTelephone:
                 continue
 
     def getImage(self):
-        image = self.driver.find_element_by_xpath('//div[@class="item-phone-big-number js-item-phone-big-number"]/img').get_attribute('src').split(',')[1]
-        return image
-
-    def getNumber(self):
-        number = None
-        while number is None:
+        """ Метод возвращает изображение номера телефона в байтах. """
+        while True:
             try:
-                image = self.getImage()
+                image = self.driver.find_element_by_xpath(
+                    '//div[@class="item-phone-big-number js-item-phone-big-number"]/img').get_attribute('src').split(
+                    ',')[1]
                 img = decodebytes(bytearray(image, 'utf-8'))
-                number = write(img, "Avito.png")
+                self.driver.quit()
+                return img
             except NoSuchElementException:
                 continue
-        self.driver.quit()
+
+    def write(self, img):
+        with open(self.name, "wb") as f:
+            f.write(img)
+
+    def getNamber(self):
+        """ Метод возвращает номер телефона. """
+        tessdata_dir_config = '--tessdata-dir "C:\Tesseract-OCR"'
+        image = Image.open(self.name)
+        number = image_to_string(image, config=tessdata_dir_config, lang='eng')
         return number

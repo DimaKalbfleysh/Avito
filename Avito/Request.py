@@ -1,3 +1,4 @@
+# coding=utf-8
 from requests import get
 from requests.exceptions import ProxyError, ReadTimeout, SSLError, ConnectionError
 

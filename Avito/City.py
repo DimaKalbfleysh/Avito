@@ -1,3 +1,4 @@
+# coding=utf-8
 cities = {'Москва': 'moskva',
           'Санкт-Петербург': 'sankt-peterburg',
           'Астрахань': 'astrahan',

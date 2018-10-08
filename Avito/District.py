@@ -1,3 +1,4 @@
+# coding=utf-8
 from bs4 import BeautifulSoup
 from Avito.Request import Request
 
@@ -14,14 +15,11 @@ def getData(html):
 
 
 def getDistrict(city, ip):
+    """ Функция возвращает словарь с районами city.
+    Ключём является название района на русском,
+    значение является название района на английском. """
+
     url = "https://avito.ru/{}".format(city)
-
     district = getData(Request(url, ip).getHtml())
-    '''
-    Получаем словарь районов.
-    Ключём является название района на русском, 
-    значение является название района на английском
-    '''
-
     print(district)
     return district

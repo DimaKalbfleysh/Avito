@@ -1,3 +1,4 @@
+# coding=utf-8
 from bs4 import BeautifulSoup
 from Avito.Request import Request
 
@@ -23,9 +24,10 @@ def getLinksGoods(html):
 
 
 def getGoods(urls, ip):
+    """ Функция возвращает список ссылок товаров. """
     for url in urls:
-        r = Request(url, ip).getHtml()
-        getLinksGoods(r)
+        html = Request(url, ip).getHtml()
+        getLinksGoods(html)
     return links
 
 
