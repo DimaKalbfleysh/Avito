@@ -15,7 +15,6 @@ def main():
 
     categories = getDictCategories(proxy_list)
 
-    # Получаем нужный город.
     city = cities["Ижевск"]
 
     district = getDistrict(city, proxy_list)
@@ -24,7 +23,6 @@ def main():
     # metro = getMetro(city, proxy_list)
     # Получаем словарь с метро city.
 
-    # Получаем нужную категорию
     category = categories["Велосипеды"]
 
     subcategories = getSubcategories(category, proxy_list)

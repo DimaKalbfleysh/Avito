@@ -9,10 +9,10 @@ all_number = []
 
 
 class NumberTelephone:
-    def __init__(self, url, index):
+    def __init__(self, url, index1, index2):
         self.driver = webdriver.PhantomJS(executable_path=r'C:\Users\Dima\Downloads\phantomjs-2.1.1-windows\phantomjs-2.1.1-windows\bin\phantomjs')
         self.url = url
-        self.name = "AvitoIMG/Avito{}.png".format(index)
+        self.name = "AvitoIMG/Avito{}{}.png".format(index1, index2)
 
     def main(self):
         while True:
