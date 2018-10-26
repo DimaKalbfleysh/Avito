@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from Avito.Request import Request
 
 
-def getData(html):
+def get_data(html):
     data = {}
     soup = BeautifulSoup(html, "lxml")
     tds = soup.find("optgroup", label="район").find_all("option")
@@ -14,12 +14,12 @@ def getData(html):
     return data
 
 
-def getDistrict(city, ip):
+def get_district(city, ip):
     """ Функция возвращает словарь с районами city.
     Ключём является название района на русском,
     значение является название района на английском. """
 
     url = "https://avito.ru/{}".format(city)
-    district = getData(Request(url, ip).getHtml())
+    district = get_data(Request(url, ip).getHtml())
     print(district)
     return district

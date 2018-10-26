@@ -4,7 +4,7 @@ from Avito.Request import Request
 from Avito.categories import categories
 
 
-def getListCategories(html):
+def get_list_categories(html):
     """ Функция возвращает список категорий. """
     soup = BeautifulSoup(html, 'lxml')
     all_li = soup.find('nav', class_='category-map').find_all('li', class_='category-map-item')
@@ -18,10 +18,10 @@ def getListCategories(html):
     return links
 
 
-def getDictCategories(ip_list):
+def get_dict_categories(ip_list):
     """ Функция возвращает словарь с категориями. """
     dict_categories = {}
-    links = getListCategories(Request('https://www.avito.ru/', ip_list).getHtml())
+    links = get_list_categories(Request('https://www.avito.ru/', ip_list).getHtml())
 
     # Добавляем в словарь категории. Ключём является название категории на русском языке,
     # значение является название категории на английском языке

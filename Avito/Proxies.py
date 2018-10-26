@@ -5,12 +5,12 @@ from bs4 import BeautifulSoup
 proxy_list = []
 
 
-def getHtml(url):
+def get_html(url):
     r = requests.get(url)
     return r.text
 
 
-def listIP(html):
+def list_iP(html):
     soup = BeautifulSoup(html, "lxml")
     trs = soup.find("tbody").find_all("tr")
     for tr in trs:
@@ -21,10 +21,10 @@ def listIP(html):
     return proxy_list
 
 
-def getProxy():
+def get_proxy():
     """ Функция возвращает список https прокси. """
     url = "https://www.sslproxies.org/"
-    proxy_list = listIP(getHtml(url))
+    proxy_list = list_iP(get_html(url))
     return proxy_list
 
 

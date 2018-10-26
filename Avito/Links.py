@@ -5,7 +5,7 @@ from Avito.Request import Request
 urls = []
 
 
-def getLastPage(html):
+def get_last_page(html):
     try:
         soup = BeautifulSoup(html, "lxml")
         pages = soup.find("div", class_="pagination-pages clearfix").find_all("a", class_="pagination-page")
@@ -15,10 +15,10 @@ def getLastPage(html):
         return 1
 
 
-def getLinks(city, categories, subcategories, district, ip, qq):
+def get_links(city, categories, subcategories, district, ip, qq):
     for subcategory in subcategories:
         url = "https://avito.ru/{}/{}/{}?p={}&{}={}".format(city, categories, subcategory, 1, qq, district)
-        n = int(getLastPage(Request(url, ip).getHtml()))
+        n = int(get_last_page(Request(url, ip).getHtml()))
         print(n)
         for page in range(1, n + 1):
             url = "https://avito.ru/{}/{}/{}?p={}&{}={}".format(city, categories, subcategory, page, qq, district)
@@ -27,11 +27,11 @@ def getLinks(city, categories, subcategories, district, ip, qq):
             print(url)
 
 
-def linksToProductPages(city, categories, subcategories, districts, ip, qq):
+def links_to_product_pages(city, categories, subcategories, districts, ip, qq):
     """ Функция возвращает список ссылок страниц с товарими. """
     if type(districts) == dict:
         for district in districts:
-            getLinks(city, categories, subcategories, districts[district], ip, qq)
+            get_links(city, categories, subcategories, districts[district], ip, qq)
     else:
-        getLinks(city, categories, subcategories, districts, ip, qq)
+        get_links(city, categories, subcategories, districts, ip, qq)
     return urls

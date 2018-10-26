@@ -5,7 +5,7 @@ from Avito.Request import Request
 links = []
 
 
-def getLinksGoods(html):
+def get_links_goods(html):
     soup = BeautifulSoup(html, "lxml")
     tds = soup.find_all("div", class_="item item_table clearfix js-catalog-item-enum js-item-extended item_table_extended snippet-experiment item_hide-elements")
     for td in tds:
@@ -23,11 +23,11 @@ def getLinksGoods(html):
     return links
 
 
-def getGoods(urls, ip):
+def get_goods(urls, ip):
     """ Функция возвращает список ссылок товаров. """
     for url in urls:
         html = Request(url, ip).getHtml()
-        getLinksGoods(html)
+        get_links_goods(html)
     return links
 
 

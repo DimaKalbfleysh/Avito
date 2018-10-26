@@ -6,7 +6,7 @@ city_with_metro = {"Москва": "moscow",
                    "Санкт-перербург": "spb"}
 
 
-def getData(html, label, tag, attribute):
+def get_data(html, label, tag, attribute):
     data = {}
     soup = BeautifulSoup(html, "lxml")
     if label:
@@ -21,14 +21,14 @@ def getData(html, label, tag, attribute):
     return data
 
 
-def getMetro(city, ip):
+def get_metro(city, ip):
     if city in city_with_metro:
         url = "https://www.avito.ru/s/avito/components/metro-map/svg-maps/metro-map-{}.svg".format(
             city_with_metro[city])
         html = Request(url, ip).forMetro()
-        name = getData(html, False, "text", "data-st-id")
+        name = get_data(html, False, "text", "data-st-id")
         return name
     else:
         html = Request("https://www.avito.ru/{}".format(city), ip).getHtml()
-        name = getData(html, True, "option", "value")
+        name = get_data(html, True, "option", "value")
         return name
