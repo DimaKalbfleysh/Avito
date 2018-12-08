@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: post
+Version: 2018.11.20
+Summary: http POST dict
+Home-page: https://github.com/looking-for-a-job/post.py
+License: UNKNOWN
+Keywords: POST dict with http request variables
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+Requires-Dist: setuptools
+
+[![](https://img.shields.io/pypi/pyversions/post.svg?longCache=True)](https://pypi.org/pypi/post/)
+
+#### Install
+```bash
+$ [sudo] pip install post
+```
+
+#### Examples
+```python
+>>> import post
+
+>>> post.POST
+{...}
+```
+
+#### Links
++   [GET](https://pypi.org/project/get/)
++   [POST](https://pypi.org/project/post/)
++   [REQUEST](https://pypi.org/project/request/)
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+

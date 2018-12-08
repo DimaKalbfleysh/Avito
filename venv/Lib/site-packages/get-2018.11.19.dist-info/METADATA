@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: get
+Version: 2018.11.19
+Summary: http GET dict
+Home-page: https://github.com/looking-for-a-job/get.py
+License: UNKNOWN
+Keywords: GET dict with http request variables
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+Requires-Dist: query-string
+Requires-Dist: setuptools
+
+[![](https://img.shields.io/pypi/pyversions/get.svg?longCache=True)](https://pypi.org/pypi/get/)
+
+#### Install
+```bash
+$ [sudo] pip install get
+```
+
+#### Examples
+```python
+>>> import get
+
+get.GET
+{...}
+```
+
+#### Links
++   [GET](https://pypi.org/project/get/)
++   [POST](https://pypi.org/project/post/)
++   [REQUEST](https://pypi.org/project/request/)
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+

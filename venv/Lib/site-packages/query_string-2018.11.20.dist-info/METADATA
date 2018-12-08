@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: query-string
+Version: 2018.11.20
+Summary: get url query string dict
+Home-page: https://github.com/looking-for-a-job/query_string.py
+License: UNKNOWN
+Keywords: query,url
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+Requires-Dist: public
+Requires-Dist: setuptools
+
+[![](https://img.shields.io/pypi/pyversions/query_string.svg?longCache=True)](https://pypi.org/pypi/query_string/)
+
+#### Install
+```bash
+$ [sudo] pip install query_string
+```
+
+#### Features
++   Python 2/3 compatible
+
+#### Functions
+function|description
+-|-
+`query_string.parse(string)`|return dict with query string data
+`query_string.query_string(string)`|return dict with query string data. deprecated
+
+#### Examples
+```python
+>>> import query_string
+
+>>> query_string.parse('https://site.org/index.php?k=v&k2=v2&k3=v3#anchor')
+{'k': 'v','k2': 'v2', 'k3': 'v3'}
+
+>>> query_string.parse('k=v&k2=v2&k3=v3')
+{'k': 'v','k2': 'v2', 'k3': 'v3'}
+```
+
+#### Links
++   [Query string - Wikipedia](https://en.wikipedia.org/wiki/Query_string)
+
+<p align="center"><a href="https://pypi.org/project/readme-md/">readme-md</a> - README.md generator</p>
+
