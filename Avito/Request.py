@@ -10,7 +10,7 @@ class Request:
         self.headers = {
             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'}
 
-    def getHtml(self, returned=None):
+    def get_html(self, returned=None):
         for ip in self.list_ip:
             try:
                 html = self.response(ip)
@@ -26,7 +26,7 @@ class Request:
         if len(r.text) > 80000:
             return r.text
 
-    def forMetro(self):
+    def for_metro(self):
         for ip in self.list_ip:
             try:
                 r = get(self.url, proxies={"https": ip}, headers=self.headers, timeout=5)

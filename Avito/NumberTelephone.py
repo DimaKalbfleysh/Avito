@@ -5,7 +5,7 @@ from shutil import rmtree
 from Avito.Number import NumberTelephone, all_number
 
 
-def getNumberTelephone(urls, n):
+def get_number_telephone(urls, n):
     """ Функция возвращает список номеров телефона продавцов. """
     try:
         rmtree("AvitoIMG")
@@ -23,11 +23,11 @@ def getNumberTelephone(urls, n):
             break
 
     for list in lists:
-        r = threading.Thread(target=Threading, args=(lists[lists.index(list)], lists.index(list)))
+        r = threading.Thread(target=threading, args=(lists[lists.index(list)], lists.index(list)))
         r.start()
 
 
-def Threading(urls, index):
+def threading(urls, index):
     for url in urls:
         number = NumberTelephone(url, urls.index(url), index)
         number.main()

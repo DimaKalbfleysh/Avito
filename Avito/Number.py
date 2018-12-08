@@ -21,21 +21,21 @@ class NumberTelephone:
                 break
             except:
                 continue
-        name = self.getName()
-        self.buttonClick()
-        image = self.getImage()
+        name = self.get_name()
+        self.button_click()
+        image = self.get_image()
         self.write(image)
-        number = self.getNamber()
+        number = self.get_namber()
         data = "{} - {}".format(name, str(number))
         print(data)
         all_number.append(data)
 
-    def getName(self):
+    def get_name(self):
         """ Метод возвращает название товара. """
         name = self.driver.find_element_by_xpath('//span[@class="title-info-title-text"]').text
         return name
 
-    def buttonClick(self):
+    def button_click(self):
         """ Метод кликает на кнопку для получения номера телефона. """
         while True:
             try:
@@ -46,7 +46,7 @@ class NumberTelephone:
             except:
                 continue
 
-    def getImage(self):
+    def get_image(self):
         """ Метод возвращает изображение номера телефона в байтах. """
         while True:
             try:
@@ -63,7 +63,7 @@ class NumberTelephone:
         with open(self.name, "wb") as f:
             f.write(img)
 
-    def getNamber(self):
+    def get_namber(self):
         """ Метод возвращает номер телефона. """
         tessdata_dir_config = '--tessdata-dir "C:\Tesseract-OCR"'
         image = Image.open(self.name)
