@@ -1,0 +1,32 @@
+[INFO  - 2018-12-08T15:00:50.344Z] GhostDriver - Main - running on port 1508
+[INFO  - 2018-12-08T15:00:50.901Z] Session [0d6cc400-fafa-11e8-8ad3-2f5d34791bc2] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-12-08T15:00:50.901Z] Session [0d6cc400-fafa-11e8-8ad3-2f5d34791bc2] - page.customHeaders:  - {}
+[INFO  - 2018-12-08T15:00:50.902Z] Session [0d6cc400-fafa-11e8-8ad3-2f5d34791bc2] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-12-08T15:00:50.902Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 0d6cc400-fafa-11e8-8ad3-2f5d34791bc2
+[ERROR - 2018-12-08T15:00:50.239Z] Session [09589b50-fafa-11e8-96d2-bbead8ccff77] - page.onError - msg: ReferenceError: Can't find variable: Promise
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-08T15:00:50.240Z] Session [09589b50-fafa-11e8-96d2-bbead8ccff77] - page.onError - stack:
+  e (https://www.avito.st/s/cc/chunks/a9ed52c597b62cc431b5.js:16)
+  (anonymous function) (https://www.avito.st/s/cc/chunks/a9ed52c597b62cc431b5.js:16)
+  a (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+  (anonymous function) (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+  a (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+  (anonymous function) (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+  a (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+  u (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+  (anonymous function) (https://www.avito.st/s/cc/bundles/859aec3606e93ab1cfa0.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-08T15:00:50.366Z] Session [09589b50-fafa-11e8-96d2-bbead8ccff77] - page.onError - msg: ReferenceError: Can't find variable: fetch
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-12-08T15:00:50.366Z] Session [09589b50-fafa-11e8-96d2-bbead8ccff77] - page.onError - stack:
+  f (https://www.avito.st/s/cc/bundles/8c3f41bbf6fe130b15e6.js:1)
+  (anonymous function) (https://www.avito.st/s/cc/bundles/8c3f41bbf6fe130b15e6.js:1)
+  r (https://www.avito.st/s/cc/bundles/8c3f41bbf6fe130b15e6.js:1)
+  (anonymous function) (https://www.avito.st/s/cc/bundles/8c3f41bbf6fe130b15e6.js:1)
+  r (https://www.avito.st/s/cc/bundles/8c3f41bbf6fe130b15e6.js:1)
+  (anonymous function) (https://www.avito.st/s/cc/bundles/8c3f41bbf6fe130b15e6.js:1)
+
+  phantomjs://platform/console++.js:263 in error
