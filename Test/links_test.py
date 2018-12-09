@@ -9,8 +9,8 @@ list_ip = get_proxy()
 categories = get_dict_categories(list_ip)
 category = categories["Велосипеды"]
 city = cities["Ижевск"]
-district = get_dict_district(city, list_ip)
-
+direction = get_dict_district(city, list_ip)
+district_or_metro = 'district'
 # Если в city метро, а не районы, то
 # metro = get_metro(city, proxy_list)
 # Получаем словарь с метро city.
@@ -18,4 +18,4 @@ district = get_dict_district(city, list_ip)
 subcategories = get_subcategories(category, list_ip)
 
 while 1:
-    links = links_to_product_pages(city, category, subcategories, district['Октябрьский'], list_ip, "district")
+    links = links_to_product_pages(city, category, subcategories, direction, list_ip, district_or_metro)

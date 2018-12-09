@@ -21,6 +21,4 @@ def get_dict_categories(list_ip):
     # Добавляем в словарь категории. Ключём является название категории на русском языке,
     # значение является название категории на английском языке
     dict_categories = {category: links[categories.index(category)] for category in categories}
-
-    print(dict_categories)
     return dict_categories

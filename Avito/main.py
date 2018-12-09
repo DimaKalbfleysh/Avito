@@ -12,21 +12,32 @@ from Avito.proxies import get_proxy
 
 def main():
     list_ip = get_proxy()
-    categories = get_dict_categories(list_ip)
-    category = categories["Велосипеды"]
-    city = cities["Ижевск"]
-    district = get_dict_district(city, list_ip)
 
-    # Если в city метро, а не районы, то
-    # metro = get_metro(city, proxy_list)
-    # Получаем словарь с метро city.
-    district_or_metro = "district"
+    city = cities["Ижевск"]  # Вместо "Ижевск", введите нужный Вам город
+
+    dict_categories = get_dict_categories(list_ip)
+    print(dict_categories)
+
+    category = dict_categories["Велосипеды"]  # Вместо "Велосипеды", ввидите нужную Вам категорию
+
+    direction = get_dict_district(city, list_ip)  # Если в city метро, то direction = get_metro(city, proxy_list)
+    print(direction)
+
+    district_or_metro = 'district'  # 'district' или 'metro'
+
     subcategories = get_subcategories(category, list_ip)
-    links = links_to_product_pages(city, category, subcategories, district['Октябрьский'], list_ip, district_or_metro)
-    goods = get_goods(links, list_ip)
-    # Колличество потоков
-    n = 5
-    numbers = get_number_telephone(goods, n)
+    print(subcategories)
+
+    links = links_to_product_pages(city, category, subcategories, direction['Октябрьский'], list_ip, district_or_metro)
+    print(links)
+
+    list_goods = get_goods(links, list_ip)
+    print(list_goods)
+
+    number_of_threads = 5  # Количество потоков
+
+    numbers = get_number_telephone(list_goods, number_of_threads)
+
 
 if __name__ == '__main__':
     main()

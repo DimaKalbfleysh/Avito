@@ -22,5 +22,4 @@ def get_subcategories(category, list_ip):
     request = Request(url, list_ip)
     html = request.get_html()
     subcategories = get_data(html, category)
-    print(subcategories)
     return subcategories
