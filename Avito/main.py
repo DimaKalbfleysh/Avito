@@ -4,7 +4,7 @@ from Avito.city import cities
 from Avito.links import links_to_product_pages
 from Avito.goods import get_goods
 from Avito.category import get_dict_categories
-from Avito.number_telephone import get_number_telephone
+from Avito.threads import start_threads
 from Avito.subcategories import get_subcategories
 from Avito.metro import get_metro
 from Avito.proxies import get_proxy
@@ -36,7 +36,7 @@ def main():
 
     number_of_threads = 5  # Количество потоков
 
-    numbers = get_number_telephone(list_goods, number_of_threads)
+    numbers = start_threads(list_goods, number_of_threads)
 
 
 if __name__ == '__main__':

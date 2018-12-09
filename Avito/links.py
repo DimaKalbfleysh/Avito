@@ -1,6 +1,6 @@
 # coding=utf-8
 from bs4 import BeautifulSoup
-from Avito.request import Request
+from Avito.request import get_html
 
 urls = []
 
@@ -19,8 +19,7 @@ def get_links(city, categories, subcategories, direction, list_ip, district_or_m
     for subcategory in subcategories:
         args = [city, categories, subcategory, 1, district_or_metro, direction]
         url = "https://avito.ru/{}/{}/{}?p={}&{}={}".format(*args)
-        request = Request(url, list_ip)
-        html = request.get_html()
+        html = get_html(url, list_ip)
         last_page = int(get_last_page(html))
         for page in range(1, last_page + 1):
             args[3] = page

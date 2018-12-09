@@ -1,6 +1,7 @@
 # coding=utf-8
 from bs4 import BeautifulSoup
-from Avito.request import Request
+
+from Avito.request import get_html
 from Avito.categories import categories
 
 
@@ -14,8 +15,7 @@ def get_list_categories(html):
 
 def get_dict_categories(list_ip):
     """ Функция возвращает словарь с категориями. """
-    request = Request('https://www.avito.ru/', list_ip)
-    html = request.get_html()
+    html = get_html('https://www.avito.ru/', list_ip)
     links = get_list_categories(html)
 
     # Добавляем в словарь категории. Ключём является название категории на русском языке,

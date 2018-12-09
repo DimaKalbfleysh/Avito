@@ -1,6 +1,6 @@
 # coding=utf-8
 from bs4 import BeautifulSoup
-from Avito.request import Request
+from Avito.request import get_html
 
 
 def get_data(html, category):
@@ -19,7 +19,6 @@ def get_data(html, category):
 def get_subcategories(category, list_ip):
     """ Функция возвращает список подкатегорий category. """
     url = "https://avito.ru/rossiya/{}".format(category)
-    request = Request(url, list_ip)
-    html = request.get_html()
+    html = get_html(url, list_ip)
     subcategories = get_data(html, category)
     return subcategories

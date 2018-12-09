@@ -1,6 +1,6 @@
 # coding=utf-8
 from bs4 import BeautifulSoup
-from Avito.request import Request
+from Avito.request import get_html
 
 
 def get_data(html):
@@ -14,7 +14,6 @@ def get_data(html):
 def get_dict_district(city, list_ip):
     """ Функция возвращает словарь с районами city. """
     url = "https://avito.ru/{}".format(city)
-    request = Request(url, list_ip)
-    html = request.get_html()
+    html = get_html(url, list_ip)
     district = get_data(html)
     return district
