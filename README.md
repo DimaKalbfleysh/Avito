@@ -9,7 +9,7 @@
 - URL товара
 - ***Номер телефона продавца***
 #### с сайта https://avito.ru/ и импортирует их в Excel таблицу.
-
+***
 #### Для того чтобы запустить скрипт:
 
 `git clone https://github.com/DimaKalbfleysh/Avito.git `
